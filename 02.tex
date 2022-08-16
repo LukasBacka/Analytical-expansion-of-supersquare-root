@@ -1,0 +1,242 @@
+\section{}
+
+\subsection{First approach}
+
+By empirical observation of higher derivatives 
+of the Lambda function, we derive a hypothesis
+
+\begin{align}
+      \Lambda(1, x)&=-\frac{1}{x\ln(x)(W(\ln(x))^n+W(\ln(x)))} \\
+      \Lambda(2, x)&=\frac{(\ln(x)+1)W(\ln(x))^2 +2(\ln(x)+2)W(\ln(x))
+      +\ln(x)+2}{x^2\ln^2(x) W(\ln(x))(W(\ln(x))+1)^3}\\
+      \Lambda(3, x)&=-\frac{(2a^2+3a+2)W(a)^4+2(4a^2+9a+7)W^3(a)+3(4a^2
+      +11a+11)W^2(a)}{x^3a^3W(a)(a+1)^5}+ \\
+      & + \frac{8(a^2+3a+3)W(a)+2(a^2+3a+3)}{x^3a^3W(a)(a+1)^5}
+\end{align}
+
+In the last example, I used substitution $a = \ln(x)$. 
+However, we can observe a certain pattern from the examples.
+For example, in a denominator, a very simple formula is formed, 
+which is related to the higher derivative of the Lambert W function.
+The numerator obviously contains a polynomial, which I will call
+$\mathcal{C}$, with variable $W(x)$.
+
+\begin{align}
+     \mathcal{S}_{2\xi-1}(W(x))= \sum_{k=0}^{2\xi-1}\left[c_{\xi, k}
+     (\ln(x))\mathcal{O}_\xi(\ln(x))\right]W^{k-1}(x)
+\end{align}
+
+this polynomial contains in its coefficients another polynomial, 
+which this time I will call \(\mathcal{O}\), with variable \(\ln(x)\).
+
+\begin{align}
+     \mathcal{O}_\xi(\ln(x))= \sum_{l=0}^{\xi}o_{\xi, l, k}\ln^{l-1}(x)
+\end{align}
+
+So I will make a hypothesis
+
+\begin{conjecture}
+
+     \begin{align}
+          \frac{d^\xi}{dx^\xi}\left(\frac{1}{W(\ln(x))}\right) = 
+          \frac{(-1)^\xi (W(\ln(x))+1)^{1-2\xi}}{x^\xi \ln^\xi(x) 
+          W(\ln(x))}\sum_{k=1}^{2\xi-1}c_{\xi, k}W^{k-1}(\ln(x))
+          \sum_{l=1}^{\xi}o_{\xi, l, k}\ln^{l-1}(x)
+     \end{align}
+     
+\end{conjecture}
+
+I have listed the coefficients for the O-polynomial below in the tables of xi values
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c ||} 
+          \hline
+          \hline
+          \(\xi = 1\) & l=1 \\ [0.5ex] 
+          \hline
+          k=1 & 1 \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c ||} 
+          \hline
+          \hline
+          \(\xi = 2\) & l=1 & l=2 \\ [0.5ex] 
+          \hline
+          k=1 &1 & 1 \\
+          k=2& 1 & 2 \\
+          k=3 &1 & 2 \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c c ||} 
+          \hline
+          \hline
+          \(\xi = 3\) & l=1 & l=2 & l=3 \\ [0.5ex] 
+          \hline
+          k=1 & 2 & 3 & 2 \\
+          k=2 &4 & 9 & 7 \\
+          k=3 & 4 & 11 & 11 \\
+          k= 4 &1 & 3 & 3 \\
+          k= 5 & 1 & 3 & 3 \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c c c ||} 
+          \hline
+          \hline
+          \(\xi = 4\) & l=1 & l=2 & l=3 & l=4 \\ [0.5ex] 
+          \hline
+          k=1 & 6 & 11 & 12 & 6 \\
+          k= 2 & 18 & 44 & 54 & 29 \\
+          k=3 & 30 & 88 & 126 & 75 \\
+          k= 4 & 30 & 99 & 156 & 104 \\
+          k=5 & 90 & 319 & 522 & 348 \\
+          k= 6 & 3 & 11 & 18 & 12 \\
+          k=7 & 6 & 22 & 36 & 24 \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c c c c ||} 
+          \hline
+          \hline
+          \(\xi = 5\) & l=1 & l=2 & l=3 & l=4 & l=5 \\ [0.5ex] 
+          \hline
+          k=1 & 24 & 50 & 70 & 60 & 24 \\
+          k=2 & 96 & 250 & 385 & 350 & 146 \\
+          k=3 & 672 & 2050 & 3535 & 3470 & 1532 \\
+          k= 4 & 336 & 1150 & 2170 & 2310 & 1091 \\
+          k=5 & 336 & 1250 & 2506 & 2810 & 1405 \\
+          k=6 & 672 & 2650 & 5495 & 6280 & 3140 \\
+          k = 7 & 672 & 2750 & 5775 & 660 & 3300 \\
+          k = 8 & 12 & 50 & 105 & 120 & 60 \\
+          k= 9 & 12& 50 & 105 & 120 & 60 \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\newpage
+
+The coefficients of C-polynomials divided 
+by O-polynomial can be written in the table
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c c c c c c ||} 
+          \hline
+          \hline
+          & k=1 & k=2 & k=3 & k=4 & k= 5 & k= 6 & k=7\\ [0.5ex] 
+          \hline
+          \(\xi = 1\) &1 & & && & & \\
+          \(\xi=2\)   &1 & 2 & 1 & & & & \\
+          \(\xi=3\) & 1 & 2 & 3 & 8 & 2 & & \\
+          \(\xi=4\)  &1 & 2 & 3 & 4 & 1 & 12 & 2 \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\subsubsection{o-coefficients}
+
+First, we will try to find the formula for the o-coefficients 
+by dividing the above tables into triangles. We must realize 
+that the tables represent a three-dimensional triangle.
+
+\\
+
+first we create triangle \(o_{\xi, l, 1}\), and try to find the formula
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c c c c ||} 
+          \hline
+          \hline
+          k=1 & l=1 & l=2 & l=3 & l=4 & l= 5 \\ [0.5ex] 
+          \hline
+          \(\xi = 1\) &1 &  & &&  \\
+          \(\xi=2\)   &1 & 1 &  & &  \\
+          \(\xi=3\) & 2 & 3 & 2 &  & \\
+          \(\xi=4\)  &6 & 11 & 12 & 6 &  \\
+          \(\xi=5\)  &24 & 50 & 70 & 60 & 24  \\[1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\newpage
+
+\begin{align}
+     o_{\xi, l, 1}= s(\xi, l)(\xi-1)!
+\end{align}
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c c c c ||} 
+          \hline
+          \hline
+          k=2& l=1 & l=2 & l=3 & l=4 & l= 5 \\ [0.5ex] 
+          \hline
+          \(\xi = 2\) &1 & 2 & &&  \\
+          \(\xi=3\)   &4 & 9 & 7 & &  \\
+          \(\xi=4\) & 18 & 44 & 54 & 29 & \\
+          \(\xi=5\)  &96 & 250 & 385 & 350 & 146  \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\begin{align}
+     o_{\xi, 2, 2} &= s(\xi, 1)(\xi-1) \\
+     o_{\xi, 3, 2} &= s(\xi, 2)\xi \\
+     o_{\xi, 4, 2} &= s(\xi, 3)(2\xi+1) \\
+     o_{\xi, 5, 2} &= s(\xi, 4)(6\xi+5) 
+\end{align}
+
+Thus \(o_{\xi, l, 2} = s(\xi, l)((l-1)!\xi + \lambda(l))\).
+I was not able to find a formula for sequence \(\lambda(l)\) 
+[-1, 0, 1, 5, ...] because I do not have a program that would 
+be able to create a large enough sample.
+
+\begin{table}[h!]
+     \centering
+     \begin{tabular}{||c| c c c c c c c c c ||} 
+          \hline
+          \hline
+          l=1& k=1 & k=2 & k=3 & k=4 & k= 5 & k=6 & k=7 & k=8 & k=9 \\ [0.5ex] 
+          \hline
+          \(\xi = 1\) &1 &  & & & & & & & \\
+          \(\xi = 2\) &1 & 1 & 1& & & & & & \\
+          \(\xi=3\)   &2 & 4 & 4 &1 &1 & & & &  \\
+          \(\xi=4\) & 6 & 18 & 30 & 30 & 90 & 3 & 6 & & \\
+          \(\xi=5\)  &24 & 96 & 672 & 336 & 336 & 672 & 672 & 12 & 12  \\ [1ex] 
+          \hline
+          \hline
+     \end{tabular}
+\end{table}
+
+\begin{align}
+    o_{\xi, 1, 1} &= \xi! \\
+    o_{\xi, 1, 2} &= (\xi-1)!(\xi-1) \\
+    o_{\xi, 1, 3} &= (\xi-1)\binom{2\xi-4}{\xi-2}\binom{4\xi-10}{2\xi-5}\frac{1}{(2\xi-4)(2\xi-5)}
+\end{align}
+
+we need to find some method to find the formula of these coefficients, 
+unfortunately I am not able to estimate this formula by empirical observations.

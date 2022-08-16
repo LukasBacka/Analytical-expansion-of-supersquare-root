@@ -1,0 +1,107 @@
+\section{}
+
+\subsection{Third approach}
+
+\begin{align}
+      \frac{d}{dx}\frac{1}{W(\ln(x))} = \left.\frac{d}{du}\frac{1}{u}\right|_{u 
+      = W(\ln(x))}\left.\frac{d}{ds}W(s)\right|_{s = \ln(x)}\frac{d}{dx}\ln(x)
+\end{align}
+
+then
+
+\begin{align}
+      \frac{d^\xi}{dx^\xi}\frac{d}{dx}\frac{1}{W(\ln(x))} &=
+      \frac{d^\xi}{dx^\xi}\left[\left.\frac{d}{du}\frac{1}{u}\right|_{u 
+      = W(\ln(x))}\left.\frac{d}{ds}W(s)\right|_{s = \ln(x)}\frac{d}{dx}
+       \ln(x)\right] \\ & = \frac{d^\xi}{dx^\xi}\left[-\frac{1}{W^2(\ln(x))}
+      \times \frac{W(\ln(x))}{\ln(x)(W(\ln(x))+1)}\times \frac{1}{x}\right] \\
+      &=\sum_{k_1+k_2+k_3=\xi}\binom{\xi}{k_1, k_2, k_3} \left[\frac{d^{k_1}}{dx^{k_1}}
+      -\frac{1}{W^2(\ln(x))}\right]\left[\frac{d^{k_2}}{dx^{k_2}}\frac{W(\ln(x))}{\ln(x)
+      (W(\ln(x))+1)}\right]\left[\frac{d^{k_3}}{dx^{k_3}}\frac{1}{x}\right] \\
+\end{align}
+
+we will solve the whole problem in parts:
+
+\begin{align}
+      \Gamma_1 &= \frac{d^{k_1}}{dx^{k_1}}-\frac{1}{W^2(\ln(x))} \\
+      \Gamma_2 &= \frac{d^{k_2}}{dx^{k_2}}\frac{W(\ln(x))}{\ln(x)(W(\ln(x))+1)} \\
+      \Gamma_3 &= \frac{d^{k_3}}{dx^{k_3}}\frac{1}{x}
+\end{align}
+
+therefore
+
+\begin{align}
+      \frac{d^\xi}{dx^\xi}\frac{d}{dx}\frac{1}{W(\ln(x))}=
+      \sum_{k_1+k_2+k_3=\xi}\binom{\xi}{k_1, k_2, k_3} \Gamma_1 \Gamma_2 \Gamma_3
+\end{align}
+
+\subsubsection{Gamma 1}
+
+\begin{align}
+      \Gamma_1 &= \frac{d^{k_1}}{dx^{k_1}}-\frac{1}{W^2(\ln(x))} \\
+      &=-\frac{d^{k_1}}{dx^{k_1}}\frac{1}{W^2(\ln(x))}
+\end{align}
+
+\subsubsection{Gamma 2}
+
+\begin{align}
+      \Gamma_2 &= \frac{d^{k_2}}{dx^{k_2}}\frac{W(\ln(x))}{\ln(x)(W(\ln(x))+1)} \\
+      &=\frac{d^{k_2}}{dx^{k_2}} \left[W(\ln(x)) \frac{1}{\ln(x)}\frac{1}{W(\ln(x))+1}\right]
+\end{align}
+
+I will use the generalized Leibniz rule
+
+\begin{align}
+      \Gamma_2 &= \sum_{k_{2, 1}+k_{2, 2}+k_{2, 3}=k_2}\binom{k_2}{k_{2, 1}, k_{2, 2}, k_{2, 3}}
+      \left[\frac{d^{k_{2, 1}}}{dx^{k_{2, 1}}}W(\ln(x))\right]\left[ \frac{d^{k_{2, 2}}}{dx^{k_{2, 2}}}
+      \frac{1}{\ln(x)}\right]\left[\frac{d^{k_{2, 3}}}{dx^{k_{2, 3}}}\frac{1}{W(\ln(x))+1}\right]
+\end{align}
+
+we will divide this sub-problem again into several smaller ones
+
+\begin{align}
+      \Gamma_{2, 1} &=\frac{d^{k_{2, 1}}}{dx^{k_{2, 1}}}W(\ln(x)) \\
+      \Gamma_{2, 2} & = \frac{d^{k_{2, 2}}}{dx^{k_{2, 2}}}\frac{1}{\ln(x)} \\
+      \Gamma_{2, 3} & = \frac{d^{k_{2, 3}}}{dx^{k_{2, 3}}}\frac{1}{W(\ln(x))+1}
+\end{align}
+
+\(\Gamma_{2, 1}\):
+
+\begin{align}
+      \frac{d}{dx}W(\ln(x)) = \left.\frac{dW(u)}{du}\right|_{u=\ln(x)}\frac{d\ln(x)}{dx}
+\end{align}
+
+Let \(\Psi(\xi, x) := \frac{d^\xi}{dx^\xi}W(\ln(x))\):
+
+\begin{align}
+      \Psi(k_{2, 1}, x) &= \frac{(-1)^{k_{2, 1}+1}W(\ln(x))}{[xln(x)]^{k_{2, 1}}
+      (W(\ln(x))+1)^{2k_{2, 1}-1}}\Bigg(k_{2, 1}!\ln(x)^{k_{2, 1}-1}+\\ 
+      & \left.+\sum^{k_{2, 1}-2}_{m=1}g_{m, k_{2, 1}}\sum_{u=0}^{k_{2, 1}
+      -1}b_{u, m, k_{2, 1}}\ln^u(x)+\sum_{a=k_{2, 1}-1}^{2k_{2, 1}-2}d_{a, 
+      n, k_{2, 1}}\sum_{v=0}^{k_{2, 1}}\ln^v(x)k_{v, a, k_{2, 1}}\right)
+\end{align}
+
+where g, b, d and k are coefficients of these polynomials. 
+
+\begin{align}
+      \Psi(1, x) &=  \frac{W^\prime(\ln(x))}{x} \\
+      \Psi(2, x) &=  \frac{W^{\prime\prime}(\ln(x))-W^\prime(\ln(x))}{x^2}\\
+      \Psi(3, x) &=\frac{W^{(3)}(\ln(x))-3W^{(2)}(\ln(x))+2W^{(1)}(\ln(x))}{x^3}
+\end{align}
+
+Therefore
+
+\begin{align}
+      \Psi(\xi, x) = \frac{1}{x^\xi}\sum_{i=0}^\xi \frac{\exp(-iW(\ln(x))
+      p_i(W(\ln(x))}{(1+W(\ln(x)))^{2i-1}}(-1)^{\xi-i}|S_1(\xi+1, i)|
+\end{align}
+
+\(\Gamma_{2, 2}\):
+
+This problem is identical to the (\ref{nnnn}).
+
+\subsubsection{Gamma 3}
+
+\begin{align}
+      \Gamma_3 = (x-1)^{-k_3}_2F_1(1, 1; 1-k_3; 1-x)
+\end{align}
